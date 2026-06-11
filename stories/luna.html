@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna — Her Story · weremember.pet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light only;
+            --cream: #F5F1EA;
+            --charcoal: #1A1A1A;
+            --forest: #223126;
+            --gold: #B08D57;
+            --gold-light: #C9A96E;
+            --muted: #5C5C52;
+            --divider: #E5DFD3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        section {
+            padding: 4rem 1.5rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Hero */
+        .hero {
+            background: var(--forest);
+            color: var(--cream);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1.5rem;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .eyebrow {
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--cream);
+        }
+
+        .hero-subline {
+            font-size: 1.25rem;
+            color: var(--gold-light);
+            font-style: italic;
+            margin-bottom: 3rem;
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        .stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(192, 169, 110, 0.3);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gold-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Story Section */
+        .story {
+            background: var(--cream);
+            padding: 6rem 1.5rem;
+        }
+
+        .story p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal);
+        }
+
+        .story p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .pull-quote {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.75rem;
+            line-height: 1.4;
+            font-style: italic;
+            color: var(--forest);
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid var(--divider);
+            border-bottom: 1px solid var(--divider);
+            text-align: center;
+        }
+
+        /* Timeline */
+        .timeline {
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 6rem 1.5rem;
+        }
+
+        .timeline h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--cream);
+        }
+
+        .timeline-entries {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .timeline-entry {
+            padding-left: 2rem;
+            border-left: 2px solid var(--gold);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-entry::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+            position: absolute;
+            left: -6px;
+            top: 0.5rem;
+        }
+
+        .timeline-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            margin-bottom: 0.75rem;
+            color: var(--cream);
+        }
+
+        .timeline-description {
+            color: var(--cream);
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Closing */
+        .closing {
+            background: var(--cream);
+            padding: 6rem 1.5rem 4rem;
+        }
+
+        .closing p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: var(--charcoal);
+        }
+
+        .closing-footer {
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--muted);
+            padding-top: 2rem;
+            border-top: 1px solid var(--divider);
+        }
+
+        /* CTA */
+        .cta {
+            background: var(--forest);
+            color: var(--cream);
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--cream);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .cta-button:hover {
+            background: var(--gold);
+            color: var(--forest);
+        }
+
+        /* Footer */
+        .page-footer {
+            background: var(--charcoal);
+            color: var(--muted);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        /* iOS Install Prompt */
+        .ios-install-prompt {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--cream);
+            padding: 1rem 1.5rem;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            border-top: 1px solid var(--divider);
+        }
+
+        .ios-install-prompt.visible {
+            display: flex;
+        }
+
+        .ios-install-prompt p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: var(--charcoal);
+        }
+
+        .ios-install-prompt button {
+            background: none;
+            border: none;
+            color: var(--muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0;
+            margin-left: 1rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subline {
+                font-size: 1.125rem;
+            }
+
+            .stats {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .pull-quote {
+                font-size: 1.375rem;
+            }
+
+            .timeline h2,
+            .cta h2 {
+                font-size: 1.875rem;
+            }
+
+            section {
+                padding: 3rem 1.25rem;
+            }
+
+            .story, .closing, .timeline {
+                padding: 4rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="eyebrow">Cat</div>
+            <h1>Luna</h1>
+            <p class="hero-subline">She showed up on the back porch during a rainstorm and never left.</p>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Years Together</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Person</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="story">
+        <div class="container">
+            <p>She arrived without ceremony. A rainstorm on a Tuesday evening, the kind that turns the air heavy and makes the porch boards slick. She was just there, wet and silent, watching through the screen door. The next morning she was still there. By the third day, the back porch was simply where she lived.</p>
+
+            <p>The routine came quickly. Every morning she sat on the exact same windowsill and watched the street. Cars, joggers, delivery trucks — she tracked them all with the same unblinking attention. Every evening she slept on the same corner of the couch, curled into herself, her tail tucked in. She moved through the house like she was following a script only she could read.</p>
+
+            <div class="pull-quote">
+                She hated everyone except one person. That person she followed everywhere.
+            </div>
+
+            <p>It wasn't affection in the usual sense. She didn't purr on command or come when called. But she was always in the same room, always within sight. Kitchen, office, bedroom — wherever that one person went, Luna followed. If they sat down, she appeared. If they stood, she watched. It was companionship without performance, loyalty without fanfare.</p>
+
+            <p>The one time she climbed onto a stranger's lap and fell asleep, everyone stopped talking. It was a Tuesday afternoon, someone visiting for coffee, nothing special. Luna walked across the room, jumped up, circled twice, and closed her eyes. Ten minutes later she woke up, looked around as if surprised to find herself there, and left. It never happened again.</p>
+        </div>
+    </section>
+
+    <section class="timeline">
+        <div class="container">
+            <h2>A life in moments</h2>
+            <div class="timeline-entries">
+                <div class="timeline-entry">
+                    <div class="timeline-label">Arrival</div>
+                    <div class="timeline-title">A rainstorm on the porch</div>
+                    <div class="timeline-description">She showed up wet and silent, watching through the screen door. By the third day, the back porch was simply where she lived.</div>
+                </div>
+                <div class="timeline-entry">
+                    <div class="timeline-label">Routine</div>
+                    <div class="timeline-title">The windowsill and the couch</div>
+                    <div class="timeline-description">Every morning, the same windowsill. Every evening, the same corner of the couch. She moved through the house like she was following a script only she could read.</div>
+                </div>
+                <div class="timeline-entry">
+                    <div class="timeline-label">Bond</div>
+                    <div class="timeline-title">One person</div>
+                    <div class="timeline-description">She hated everyone except one person. That person she followed everywhere — kitchen, office, bedroom — always in the same room, always within sight.</div>
+                </div>
+                <div class="timeline-entry">
+                    <div class="timeline-label">Exception</div>
+                    <div class="timeline-title">The Tuesday she chose a stranger</div>
+                    <div class="timeline-description">One afternoon she climbed onto a visitor's lap, circled twice, and fell asleep. Ten minutes later she woke up, looked around as if surprised, and left. It never happened again.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="closing">
+        <div class="container">
+            <p>Some cats announce themselves. Luna simply existed — present, observant, following her own unspoken rules. The windowsill in the morning. The couch in the evening. The silent companion who chose one person and meant it. She came in from the rain and stayed for six years, and in that time she taught everyone around her that loyalty doesn't need to be loud to be absolute.</p>
+            <div class="closing-footer">
+                Luna · weremember.pet
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Every pet has a life worth preserving.</h2>
+            <a href="https://weremember.pet/start" class="cta-button">Create Their Story</a>
+        </div>
+    </section>
+
+    <footer class="page-footer">
+        weremember.pet
+    </footer>
+
+    <div class="ios-install-prompt" id="iosPrompt">
+        <p>Add to Home Screen to revisit anytime</p>
+        <button onclick="document.getElementById('iosPrompt').style.display='none'" aria-label="Close">&times;</button>
+    </div>
+
+    <script>
+        // iOS Install Prompt
+        let scrollThreshold = false;
+        const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) && !window.navigator.standalone;
+        const prompt = document.getElementById('iosPrompt');
+
+        if (isIOS) {
+            window.addEventListener('scroll', function() {
+                const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                if (scrollPercent > 40 && !scrollThreshold) {
+                    scrollThreshold = true;
+                    prompt.classList.add('visible');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
