@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biscuit — His Story · weremember.pet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: light only;
+            --cream: #F5F1EA;
+            --charcoal: #1A1A1A;
+            --forest: #223126;
+            --gold: #B08D57;
+            --gold-light: #C9A96E;
+            --muted: #5C5C52;
+            --divider: #E5DFD3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .hero {
+            background: var(--forest);
+            color: var(--cream);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--cream);
+        }
+
+        .hero-subline {
+            font-size: 1.25rem;
+            max-width: 600px;
+            color: var(--gold-light);
+            margin-bottom: 3rem;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+        }
+
+        .hero-stats span {
+            color: var(--cream);
+        }
+
+        .story-section {
+            background: var(--cream);
+            padding: 6rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story-section p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--charcoal);
+        }
+
+        .pull-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-style: italic;
+            line-height: 1.5;
+            color: var(--forest);
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid var(--divider);
+            border-bottom: 1px solid var(--divider);
+            text-align: center;
+        }
+
+        .timeline {
+            background: var(--charcoal);
+            color: var(--cream);
+            padding: 6rem 2rem;
+        }
+
+        .timeline-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline h2 {
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            text-align: center;
+            color: var(--cream);
+        }
+
+        .timeline-entry {
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+            border-left: 2px solid var(--gold);
+            position: relative;
+        }
+
+        .timeline-entry::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .timeline-phase {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gold-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--cream);
+        }
+
+        .timeline-description {
+            font-size: 1rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .closing-section {
+            background: var(--cream);
+            padding: 6rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .closing-section p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--charcoal);
+        }
+
+        .closing-footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--divider);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--muted);
+            letter-spacing: 0.05em;
+        }
+
+        .cta-section {
+            background: var(--forest);
+            color: var(--cream);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--cream);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            background: transparent;
+        }
+
+        .cta-button:hover {
+            background: var(--gold);
+            color: var(--forest);
+        }
+
+        .page-footer {
+            background: var(--charcoal);
+            color: var(--muted);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        .ios-prompt {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--cream);
+            padding: 1rem 2rem;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--charcoal);
+        }
+
+        .ios-prompt.visible {
+            display: block;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subline {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .story-section,
+            .closing-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .story-section p,
+            .closing-section p {
+                font-size: 1rem;
+            }
+
+            .pull-quote {
+                font-size: 1.25rem;
+                margin: 2rem 0;
+                padding: 1.5rem 0;
+            }
+
+            .timeline h2,
+            .cta-section h2 {
+                font-size: 1.75rem;
+            }
+
+            .timeline {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-eyebrow">Dog</div>
+        <h1>Biscuit</h1>
+        <div class="hero-subline">The only one not barking on a rainy Tuesday.</div>
+        <div class="hero-stats">
+            <span>2,920 days together</span>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <p>He was at the Humane Society on a rainy Tuesday. The kennels were loud — every dog announcing itself, demanding attention, selling their case for a home. Biscuit sat quietly in the back corner. The only one not barking.</p>
+
+        <p>Every morning after that, he dragged his blanket to the back door and waited. Rain or shine. It became the rhythm of the house — before coffee, before breakfast, before anything else, there was Biscuit at the door with his blanket, looking out at the yard like he was on duty.</p>
+
+        <div class="pull-quote">
+            He always knew when someone was sad. Would just come sit on their feet.
+        </div>
+
+        <p>He had a way of reading a room that no one ever taught him. When someone was having a hard day, he didn't paw or whine or try to fix it. He just walked over, settled himself on their feet, and stayed there. Heavy and warm and certain.</p>
+
+        <p>For seven years, he never climbed into bed. He had his spots — the blanket by the door, the corner of the living room, the patch of sun by the window — and he kept to them. Then came the night of the big storm. Thunder rolled in from the west and the house shook with it. Biscuit appeared in the bedroom doorway, hesitated for a moment, then climbed up and pressed himself against the pillows. He was seven years old. It was the first time.</p>
+    </section>
+
+    <section class="timeline">
+        <div class="timeline-container">
+            <h2>A life in moments</h2>
+            
+            <div class="timeline-entry">
+                <div class="timeline-phase">Beginning</div>
+                <div class="timeline-title">A rainy Tuesday</div>
+                <div class="timeline-description">Found at the Humane Society, the only dog not barking. Quiet in the back corner, waiting.</div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="timeline-phase">Morning Routine</div>
+                <div class="timeline-title">Blanket to the door</div>
+                <div class="timeline-description">Every single morning, rain or shine, he dragged his blanket to the back door and waited. It became the first thing that happened in the house.</div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="timeline-phase">His Gift</div>
+                <div class="timeline-title">Sitting on feet</div>
+                <div class="timeline-description">He always knew when someone was sad. No fuss, no noise. He'd just walk over and sit on their feet until things felt lighter.</div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="timeline-phase">Seven Years In</div>
+                <div class="timeline-title">The night of the storm</div>
+                <div class="timeline-description">Thunder shook the house. For the first time in seven years, Biscuit climbed into bed and stayed there.</div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="timeline-phase">Eight Years</div>
+                <div class="timeline-title">2,920 days</div>
+                <div class="timeline-description">Eight years of mornings at the door. Eight years of knowing. Eight years of quiet companionship.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="closing-section">
+        <p>Some dogs announce themselves. Some demand the spotlight. Biscuit was never that. He was the one who waited quietly, who knew without being told, who showed up in the doorway during a storm and decided it was finally time. The blanket still sits by the back door. The morning light still comes through the same window. The house still remembers the weight of him on someone's feet when the day felt too heavy to carry alone.</p>
+
+        <div class="closing-footer">
+            Biscuit · weremember.pet
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Every pet has a life worth preserving.</h2>
+        <a href="https://weremember.pet/start" class="cta-button">Create Their Story</a>
+    </section>
+
+    <footer class="page-footer">
+        weremember.pet
+    </footer>
+
+    <div class="ios-prompt" id="iosPrompt">
+        Add to Home Screen to revisit anytime
+    </div>
+
+    <script>
+        // iOS install prompt
+        let scrollThreshold = false;
+        window.addEventListener('scroll', function() {
+            if (!scrollThreshold && window.scrollY > document.documentElement.scrollHeight * 0.4) {
+                scrollThreshold = true;
+                const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+                const isStandalone = window.navigator.standalone;
+                if (isIOS && !isStandalone) {
+                    document.getElementById('iosPrompt').classList.add('visible');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
